@@ -2,7 +2,10 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Metodos {
 
@@ -57,7 +60,12 @@ public class Metodos {
 			System.out.println("-----Erro ao tentar dar submit no elemento-----" + e.getMessage());
 		}
 	}
+	public void tempToClick(By elemento, String descricao) {
+		WebDriverWait espera = new WebDriverWait(driver, 10);
+		@SuppressWarnings("unused")
+		WebElement element = espera.until(ExpectedConditions.visibilityOfElementLocated(elemento));
 
+	}
 	/**
 	 * Metodo para clicar
 	 * 

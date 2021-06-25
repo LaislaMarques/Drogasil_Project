@@ -19,9 +19,17 @@ public class Steps {
 
 	@Then("o sistema deve exibir a mensagem de Resumo de conta")
 	public void o_sistema_deve_exibir_a_mensagem_de_resumo_de_conta() {
+		mtdo.tempToClick(ele.getCookies(), null);
 		mtdo.clicar(ele.getCookies());
+		mtdo.preencher(ele.getSearchHeader(), "dorflex");
+		mtdo.clicar(ele.getButton());
 
 	}
+
+@When("Informar usuario e senha validos")
+public void informar_usuario_e_senha_validos() {
+  
+}
 
 	@When("Informar usuario cadastrado")
 	public void informar_usuario_cadastrado() {
