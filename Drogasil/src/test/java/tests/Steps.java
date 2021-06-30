@@ -19,10 +19,12 @@ public class Steps {
 
 	@Then("o sistema deve exibir a mensagem de Resumo de conta")
 	public void o_sistema_deve_exibir_a_mensagem_de_resumo_de_conta() {
+		mtdo.pausa(2000);
 		mtdo.tempToClick(ele.getCookies(), null);
 		mtdo.clicar(ele.getCookies());
 		mtdo.preencher(ele.getSearchHeader(), "dorflex");
 		mtdo.clicar(ele.getButton());
+		
 
 	}
 
