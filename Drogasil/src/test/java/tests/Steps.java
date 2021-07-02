@@ -22,7 +22,7 @@ public class Steps {
 		mtdo.pausa(2000);
 		mtdo.tempToClick(ele.getCookies(), null);
 		mtdo.clicar(ele.getCookies());
-		mtdo.preencher(ele.getSearchHeader(), "dorflex");
+		mtdo.preencher(ele.getlogin(), "dorflex");
 		mtdo.clicar(ele.getButton());
 		
 
