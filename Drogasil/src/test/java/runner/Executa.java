@@ -7,10 +7,10 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "./src/test/resources/Features/clientecadastrado.feature",
+		features = "./src/test/resources/Features/Buscar.produtos.feature",
 		glue = {""},
 		monochrome = true,
-		tags = "@CT01",
+		tags = "@drogasil",
 		plugin = {"pretty","html:target/cucumber-report.html"}
 		
 		

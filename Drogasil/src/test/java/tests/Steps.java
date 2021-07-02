@@ -17,35 +17,38 @@ public class Steps {
 
 	}
 
-	@Then("o sistema deve exibir a mensagem de Resumo de conta")
-	public void o_sistema_deve_exibir_a_mensagem_de_resumo_de_conta() {
+	@When("buscar por medicamento {string}")
+	public void buscar_por_medicamento(String texto) {
 		mtdo.pausa(2000);
-		mtdo.tempToClick(ele.getCookies(), null);
+		mtdo.tempToClick(ele.getCookies(), "fechar cookie");
 		mtdo.clicar(ele.getCookies());
-		mtdo.preencher(ele.getSearchHeader(), "dorflex");
+		mtdo.preencher(ele.getSearchHeader(), texto);
+		mtdo.clicar(ele.getButton());
+		mtdo.pausa(2000);
+	}
+
+	@Then("valido a busca {string}")
+	public void valido_a_busca(String texto) {
+		mtdo.tempToClick(ele.getdorflex(), null);
+		mtdo.validartexto(ele.getdorflex(), texto);
+		mtdo.pausa(1000);
+		mtdo.fecharNavegador();
+
+	}
+
+	@When("buscar por alimento {string}")
+	public void buscar_por_alimento(String alimento) {
+		mtdo.pausa(2000);
+		mtdo.tempToClick(ele.getCookies(), "fechar cookie");
+		mtdo.clicar(ele.getCookies());
+		mtdo.pausa(5000);
+		mtdo.preencher(ele.getSearchHeader(), alimento);
 		mtdo.clicar(ele.getButton());
 		
-
 	}
-
-@When("Informar usuario e senha validos")
-public void informar_usuario_e_senha_validos() {
-  
+	@Then("valido a mensagem de {string}")
+	public void valido_a_mensagem_de(String texto) {
+	   mtdo.tempToClick(ele.getfeijoada(), texto);
+		mtdo.fecharNavegador();
 }
-
-	@When("Informar usuario cadastrado")
-	public void informar_usuario_cadastrado() {
-
-	}
-
-	@When("Clicar em esqueci minha senha")
-	public void clicar_em_esqueci_minha_senha() {
-
-	}
-
-	@Then("o sistema deve exibir a campo com a informacao de Digite seu email ou cpf")
-	public void o_sistema_deve_exibir_a_campo_com_a_informacao_de_digite_seu_email_ou_cpf() {
-
-	}
-
 }

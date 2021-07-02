@@ -1,5 +1,8 @@
 package pages;
 
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -97,7 +100,12 @@ public class Metodos {
 
 		}
 	}
-
+public void validartexto(By elemento, String texto) {
+	String textoEsperado = driver.findElement(elemento).getText();
+	assertEquals(texto, textoEsperado);
+	
+	
+}
 	/**
 	 * Metodo para fechar navegador
 	 * 
