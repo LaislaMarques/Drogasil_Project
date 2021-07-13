@@ -1,6 +1,9 @@
 package pages;
 
+import static org.junit.Assert.assertEquals;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -26,7 +29,7 @@ public class Metodos {
 			driver.get(site);
 			driver.manage().window().maximize();
 		} catch (Exception e) {
-			System.out.println("------- error ao preencher, no passo " + passo + " " + e.getMessage());
+			System.out.println("------- error ao preencher, no passo " + passo + " " + e.getLocalizedMessage());
 
 		}
 	}
@@ -40,7 +43,7 @@ public class Metodos {
 
 	public void preencher(By element, String texto) {
 		try {
-			driver.findElement(element).sendKeys(texto);
+			driver.findElement(element).sendKeys(Keys.chord(texto));
 		} catch (Exception e) {
 
 		}
@@ -57,7 +60,7 @@ public class Metodos {
 		try {
 			driver.findElement(element).submit();
 		} catch (Exception e) {
-			System.out.println("-----Erro ao tentar dar submit no elemento-----" + e.getMessage());
+			System.out.println("-----Erro ao tentar dar submit no elemento-----" + e.getLocalizedMessage());
 		}
 	}
 	public void tempToClick(By elemento, String descricao) {
@@ -77,7 +80,7 @@ public class Metodos {
 		try {
 			driver.findElement(element).click();
 		} catch (Exception e) {
-			System.out.println("-----Erro ao clicar no elemento-----" + e.getMessage());
+			System.out.println("-----Erro ao clicar no elemento-----" + e.getLocalizedMessage());
 		}
 	}
 
@@ -93,7 +96,7 @@ public class Metodos {
 		try {
 			Thread.sleep(tempo);
 		} catch (Exception e) {
-			System.out.println("-----Error na pausa com Thread.sleep-----" + e.getMessage());
+			System.out.println("-----Error na pausa com Thread.sleep-----" + e.getLocalizedMessage());
 
 		}
 	}
@@ -109,8 +112,11 @@ public class Metodos {
 		try {
 			driver.quit();
 		} catch (Exception e) {
-			System.out.println("-----Erro ao tentar dar fechar navegador-----" + e.getMessage());
+			System.out.println("-----Erro ao tentar dar fechar navegador-----" + e.getLocalizedMessage());
 		}
 	}
-
+public void validarTexto(By elemento,String texto) {
+	String textEsp = driver.findElement(elemento).getText();
+	assertEquals(textEsp, texto);
+}
 }

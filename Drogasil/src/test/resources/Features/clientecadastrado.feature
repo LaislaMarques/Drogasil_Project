@@ -4,11 +4,11 @@ Feature: Login de Usuario Cadastrado
  Eu como usuario quero acessar o site e realizar login
  
  Background: Acessar tela de login
- Given que eu esteja no site "https://m2-stage.drogasil.com.br/"
+ Given que esteja no site "https://m2-stage.drogasil.com.br/"
 
   @CT01
-  Scenario: Efetuar login com dados validos
-    When Informar usuario e senha validos
+  Scenario: Efetuar login com dados invalidos
+    When Informar usuario e senha invalidos
     Then o sistema deve exibir a mensagem de Resumo de conta
     
   
